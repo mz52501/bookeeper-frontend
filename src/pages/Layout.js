@@ -28,6 +28,11 @@ export default function Layout() {
                             My profile
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/books" className="text-blue-500 hover:underline">
+                            Book list
+                        </Link>
+                    </li>
                 </ul>
             </nav>
             <Outlet/>
