@@ -9,20 +9,20 @@ function Profile() {
   // If we need to send data later
   const { postData } = usePostData('/api/user/profile');
 
-  if (loading) return <div>Chargement...</div>;
-  if (error) return <div>Erreur : {error.message}</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error : {error.message}</div>;
 
   return (
     <div>
-      <h1>Profil de l'utilisateur</h1>
-      <p><strong>ID Utilisateur :</strong> {user.userId}</p>
-      <p><strong>Prénom :</strong> {user.name}</p>
-      <p><strong>Nom :</strong> {user.surname}</p>
-      <p><strong>Date de naissance :</strong> {user.dob}</p>
+      <h1>Your profile</h1>
+      <p><strong>User ID :</strong> {user.userId}</p>
+      <p><strong>Name :</strong> {user.name}</p>
+      <p><strong>Last name :</strong> {user.surname}</p>
+      <p><strong>Date of birth :</strong> {user.dob}</p>
       <p><strong>Login :</strong> {user.login}</p>
 
       <button onClick={() => window.location.href = '/'}>
-        Retour à l’accueil
+        Back to dashboard
       </button>
     </div>
   );

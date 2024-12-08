@@ -79,6 +79,9 @@ export default function AddBook() {
                     <p className="text-lg">{book.title + ", " + book.author + ", PUBLISHED:" + book.year}</p>
                 </div>
             )}
+            <button onClick={() => window.location.href = '/'}>
+                Back to dashboard
+            </button>
         </div>
     )
 }
