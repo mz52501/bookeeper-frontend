@@ -17,12 +17,24 @@ export default function Layout() {
                 {/* Ajout des liens de navigation conditionnels */}
                 <ul className="flex gap-4 ml-10">
                     {currentUser.role === 'admin' && (
-                        <li>
+                        <ul>
+                            <li>
                             <Link to="/addbook" className="text-blue-500 hover:underline">
                                 Add a book
                             </Link>
                         </li>
+                        <li>
+                        <Link to="/register" className="text-blue-500 hover:underline">
+                                Add a new user
+                            </Link>
+                        </li>
+                        </ul>
                     )}
+                    <li>
+                        <Link to="/login" className="text-blue-500 hover:underline">
+                            Login
+                        </Link>
+                    </li>
                     <li>
                         <Link to="/profile" className="text-blue-500 hover:underline">
                             My profile
