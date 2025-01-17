@@ -64,9 +64,9 @@ function BookDetail() {
     };
 
     return (
-        <div className="flex-1 flex flex-col justify-center items-center">
+        <div className="flex-1 flex flex-col overflow-auto items-center justify-start">
             <div
-                className="flex flex-col justify-evenly h-2/3 items-center shadow-md rounded-md w-1/3 px-14 bg-gray-50">
+                className="flex flex-col justify-evenly flex-none h-2/3 items-center shadow-md rounded-md w-1/3 bg-gray-50">
                 <div className="shadow-md rounded-md bg-gray-700">
                     <p className="text-3xl text-white px-8 py-4 font-bold">{book.title}</p>
                 </div>
@@ -92,6 +92,25 @@ function BookDetail() {
                     </button>
                 </div>
             </div>
+            {/*reviews display */}
+            {book.reviews.length > 0 ? (
+                <div className="w-2/5 flex flex-col justify-center items-center my-8">
+                    <div className="rounded-md shadow-md bg-gray-700">
+                        <p className="text-2xl text-white font-semibold px-10 py-1">Reviews</p>
+                    </div>
+                    <div>
+                        {book.reviews.map(review => (
+                            <div className="mt-4 rounded-md shadow-md bg-gray-50 p-5">
+                                <div className="flex items-center justify-between">
+                                    <StarRating rating={review.rating}/>
+                                    <p className="text-xl font-regular ml-4">Date: {new Date(review.created).getDate() + "." + new Date(review.created).getMonth() + 1 + "." + new Date(review.created).getFullYear()}</p>
+                                </div>
+                                <p>{review.comment}</p>
+                            </div>
+
+                        ))}
+                    </div>
+                </div>) : <></>}
 
             {/* Review Modal */}
             {isModalOpen && (
