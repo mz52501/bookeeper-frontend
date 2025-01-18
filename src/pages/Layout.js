@@ -28,6 +28,11 @@ export default function Layout() {
                                 Add a new user
                             </Link>
                         </li>
+                        <li>
+                        <Link to="/addLoan" className="text-blue-500 hover:underline">
+                                Add a new loan
+                            </Link>
+                        </li>
                         </ul>
                     )}
                     <li>

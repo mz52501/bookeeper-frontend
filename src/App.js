@@ -9,6 +9,7 @@ import BookDetail from './pages/BookDetail';
 import Register from './pages/RegisterPage';
 import Login from './pages/LoginPage'
 import {AuthProvider} from './context/AuthContext';
+import AddLoan from './pages/AddLoan';
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                         <Route path="/books" element={<Books/>}/>
                         <Route path="/books/:id" element={<BookDetail/>}/>
                         <Route path="/register" element={<Register/>}/>
+                        <Route path="/addLoan" element={<AddLoan/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>
